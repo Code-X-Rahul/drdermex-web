@@ -39,6 +39,7 @@ const BENEFITS = [
   {
     name: "Improved Outcomes",
     description: "Accelerate your skin's journey to wellness.",
+    isDisabled: true,
   },
   {
     name: "Mass Screening",
@@ -223,18 +224,22 @@ export default function Home() {
           <div className="flex flex-col gap-4">
             {BENEFITS.map((benefit) => (
               <button
-                className="px-4 py-4 flex items-center justify-between shadowLarge rounded-md border border-[#F5F5F5]"
+                disabled={benefit.isDisabled}
+                className="px-4 py-4 flex items-center justify-between shadowLarge rounded-md border border-[#F5F5F5] disabled:border-primary group"
                 key={benefit.name}
               >
                 <div className="flex flex-col gap-2 items-start">
-                  <p className="text-secondary text-xl leading-[17px] font-bold">
+                  <p className="text-secondary text-xl leading-[17px] font-bold group-disabled:text-primary">
                     {benefit.name}
                   </p>
                   <p className="text-sm leading-5 text-tertiary">
                     {benefit.description}
                   </p>
                 </div>
-                <ArrowRight color="#D9D9D9" size={20} />
+                <ArrowRight
+                  className={"text-[#D9D9D9] group-disabled:text-primary"}
+                  size={20}
+                />
               </button>
             ))}
           </div>
