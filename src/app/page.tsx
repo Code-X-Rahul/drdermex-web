@@ -115,14 +115,26 @@ export default function Home() {
           </div>
         </div>
         <div className="flex items-center justify-center">
-          <Image src={"/acneImage.svg"} width={260} height={283} alt="acne" />
+          <Image
+            src={"/acne.png"}
+            width={260}
+            height={283}
+            alt="acne"
+            className="rounded-[16px] acneShadow"
+          />
         </div>
       </MainWrapper>
 
       <div className="bg-primary/10 py-10">
         <MainWrapper className="grid grid-cols-[40%,_1fr] gap-5">
           <div className="flex items-center justify-center ">
-            <Image src={"/acneImage.svg"} width={260} height={283} alt="acne" />
+            <Image
+              src={"/acne2.jpeg"}
+              width={260}
+              height={283}
+              alt="acne"
+              className="acneShadow w-[260px] h-[283px] object-cover rounded-[16px]"
+            />
           </div>
           <div className="flex flex-col gap-8">
             <div className="grid gap-5">

@@ -144,3 +144,8 @@
   border-radius: 6px;
 }
 
+
+
+.acneShadow{
+  box-shadow: 0px 18px 40px 0px hsla(0, 0%, 0%, 0.12);
+}
