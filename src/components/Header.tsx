@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import MainWrapper from "./wrappers/MainWrapper";
 
-const links = [
+export const links = [
   {
     name: "About",
     url: "#",

@@ -1,4 +1,7 @@
 import Header from "@/components/Header";
+import Benefits from "@/components/landingPage/Benefits";
+import FAQ from "@/components/landingPage/FAQ";
+import Features from "@/components/landingPage/Features";
 import { Button } from "@/components/ui/button";
 import MainWrapper from "@/components/wrappers/MainWrapper";
 import { ArrowRight, Check } from "lucide-react";
@@ -31,30 +34,9 @@ const PROBLEMS = [
   },
 ];
 
-const BENEFITS = [
-  {
-    name: "Early Detection",
-    description: "A proactive approach to skin health.",
-  },
-  {
-    name: "Improved Outcomes",
-    description: "Accelerate your skin's journey to wellness.",
-    isDisabled: true,
-  },
-  {
-    name: "Mass Screening",
-    description: "A new era of accessible skincare.",
-  },
-  {
-    name: "Empowered Healthcare Workers",
-    description: "Empowering professionals, transforming lives.",
-  },
-];
-
 export default function Home() {
   return (
     <>
-      <Header />
       <MainWrapper className="grid grid-cols-2 gap-10">
         <div className="relative flex justify-center items-center ">
           <Image
@@ -218,33 +200,59 @@ export default function Home() {
         </p>
       </div>
 
-      <MainWrapper className="py-10 grid grid-cols-2 gap-5">
-        <div className="flex flex-col gap-8">
-          <p className="text-[40px] font-bold text-secondary">Benefits</p>
-          <div className="flex flex-col gap-4">
-            {BENEFITS.map((benefit) => (
-              <button
-                disabled={benefit.isDisabled}
-                className="px-4 py-4 flex items-center justify-between shadowLarge rounded-md border border-[#F5F5F5] disabled:border-primary group"
-                key={benefit.name}
-              >
-                <div className="flex flex-col gap-2 items-start">
-                  <p className="text-secondary text-xl leading-[17px] font-bold group-disabled:text-primary">
-                    {benefit.name}
-                  </p>
-                  <p className="text-sm leading-5 text-tertiary">
-                    {benefit.description}
-                  </p>
+      <Benefits />
+
+      <Features />
+      <div className="bg-secondary text-white">
+        <MainWrapper className="py-[100px] px-8 grid grid-cols-2 gap-5">
+          <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-4">
+              <p className="font-bold text-4xl text-inherit leading-[44px]">
+                Data Insights for Patients, Doctors, and Healthcare
+                Professionals
+              </p>
+              <p className="text-sm leading-6 text-inherit">
+                Skin diseases affect millions globally and one third population
+                in India. Traditional diagnostic methods are often invasive,
+                inaccessible, or inaccurate, hindering early detection and
+                treatment. Drdermx,{" "}
+                <span className="font-bold underline cursor-pointer">
+                  Read more
+                </span>
+              </p>
+            </div>
+            <div className="flex items-center gap-5">
+              <div className="p-[14px] bg-white flex flex-col gap-3 rounded-[10px]">
+                <div className="size-14 rounded-[14px] bg-primary flex items-center justify-center">
+                  <img src={"/deepLearning.svg"} alt="icon" />
                 </div>
-                <ArrowRight
-                  className={"text-[#D9D9D9] group-disabled:text-primary"}
-                  size={20}
-                />
-              </button>
-            ))}
+                <p className="text-secondary text-xl font-bold leading-4">
+                  Deep Learning
+                </p>
+                <p className="text-[#7D7D7D] text-xs font-medium leading-[10px]">
+                  Powered imaging technology
+                </p>
+              </div>
+              <div className="p-[14px] bg-white flex flex-col gap-3 rounded-[10px]">
+                <div className="size-14 rounded-[14px] bg-primary flex items-center justify-center">
+                  <img src={"/accuracy.svg"} alt="icon" />
+                </div>
+                <p className="text-secondary text-xl font-bold leading-4">
+                  98%
+                </p>
+                <p className="text-[#7D7D7D] text-xs font-medium leading-[10px]">
+                  Accurate results in seconds
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </MainWrapper>
+          <div className="flex items-center justify-center">
+            <Image src={"/workFlow.svg"} width={404} alt="" height={360} />
+          </div>
+        </MainWrapper>
+      </div>
+
+      <FAQ />
     </>
   );
 }

@@ -124,7 +124,23 @@
   box-shadow: 0px 4px 4px 0px hsla(0, 0%, 0%, 0.03);
 }
 
+.shadowSmall{
+  box-shadow: 0px 4px 4px 0px hsla(0, 0%, 0%, 0.02);
+}
 .shadowLarge{
   box-shadow: 0px 4px 4px 0px hsla(0, 0%, 0%, 0.03);
 
 }
+.screen1Shadow{
+  box-shadow: 0px 3.74px 56.11px 0px hsla(0, 0%, 0%, 0.08);
+}
+.screen2Shadow{
+  box-shadow: 0px 4px 124px 0px #FF9BA84D;
+
+}
+
+.cardShadow{
+  box-shadow: 0px 4px 4px 0px hsla(0, 0%, 0%, 0.07);
+  border-radius: 6px;
+}
+
