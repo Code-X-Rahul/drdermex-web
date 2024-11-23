@@ -1,10 +1,9 @@
-import Header from "@/components/Header";
 import Benefits from "@/components/landingPage/Benefits";
 import FAQ from "@/components/landingPage/FAQ";
 import Features from "@/components/landingPage/Features";
 import { Button } from "@/components/ui/button";
 import MainWrapper from "@/components/wrappers/MainWrapper";
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import Image from "next/image";
 
 const PROBLEMS = [

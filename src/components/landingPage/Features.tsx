@@ -1,6 +1,5 @@
 import Image from "next/image";
 import MainWrapper from "../wrappers/MainWrapper";
-import Screen2 from "@/assets/screen2.svg";
 
 const FEATURES = [
   { name: "Skin Mapping", icon: "/skinMap.svg" },
