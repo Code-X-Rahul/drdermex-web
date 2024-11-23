@@ -4,8 +4,7 @@
 
 @layer base {
   :root {
-
-    --background: 0 0% 100%;
+    --background: 0 0% 85%
 
     --foreground: 240 10% 3.9%;
 
@@ -17,13 +16,16 @@
 
     --popover-foreground: 240 10% 3.9%;
 
-    --primary: 240 5.9% 10%;
+    /* hsla(352, 100%, 80%, 1) */
+    --primary: 352 100% 80%;
 
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 4.8% 95.9%;
+    /* hsla(203, 30%, 26%, 1) */
+    --secondary: 203 30% 26%;
 
-    --secondary-foreground: 240 5.9% 10%;
+    /* hsla(0, 0%, 100%, 1) */
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 240 4.8% 95.9%;
 
@@ -53,10 +55,11 @@
 
     --chart-5: 27 87% 67%;
 
-    --radius: 0.5rem
+    --radius: 0.5rem;
+
+    --text-secondary: 0 0% 20%;
   }
   .dark {
-
     --background: 240 10% 3.9%;
 
     --foreground: 0 0% 98%;
@@ -103,7 +106,7 @@
 
     --chart-4: 280 65% 60%;
 
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
 }
 
@@ -114,4 +117,7 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+.primaryShadow {
+  box-shadow: 0px 4px 4px 0px hsla(0, 0%, 0%, 0.03);
 }
