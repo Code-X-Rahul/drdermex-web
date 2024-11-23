@@ -1,8 +1,6 @@
 import Image from "next/image";
-import MainWrapper from "./wrappers/MainWrapper";
 import { Button } from "./ui/button";
-
-type Props = {};
+import MainWrapper from "./wrappers/MainWrapper";
 
 const links = [
   {
@@ -27,7 +25,7 @@ const links = [
   },
 ];
 
-const Header = (props: Props) => {
+const Header = () => {
   return (
     <header className="py-4 primaryShadow  ">
       <MainWrapper className="flex items-center justify-between gap-3">
