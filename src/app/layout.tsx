@@ -12,8 +12,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Dermex",
-  description: "",
+  title: "Dr. Dermx",
+  description: "A Skin Health Revolution in India",
 };
 
 export default function RootLayout({
