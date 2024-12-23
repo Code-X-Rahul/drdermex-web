@@ -1,4 +1,4 @@
-import PrivacyPolicy from "@/markdown/privacy-policy.mdx";
+import React from "react";
 
 const PrivacyPolicyPage = () => {
   return (
@@ -8,7 +8,8 @@ const PrivacyPolicyPage = () => {
         boxShadow: "0px 24px 24px 0px hsla(0, 0%, 0%, 0.1)",
       }}
     >
-      <PrivacyPolicy />
+      <h1 className="text-2xl leading-7 font-semibold text-center">Privacy Policy</h1>
+      <p></p>
     </div>
   );
 };
