@@ -8,7 +8,7 @@ const withMDX = createMDX({
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
   /* config options here */
-  basePath: "/drdermex-web",
+  // basePath: "/drdermex-web",
 
   // Configure `pageExtensions` to include markdown and MDX files
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
