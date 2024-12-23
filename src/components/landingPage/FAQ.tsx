@@ -37,7 +37,7 @@ const FAQS = [
 ];
 const FAQ = () => {
   return (
-    <MainWrapper className="py-[50px] grid grid-cols-[40%,_1fr] gap-5">
+    <MainWrapper className="py-[50px] md:grid grid-cols-[40%,_1fr] gap-5">
       <div className="text-secondary  border rounded-md flex flex-col justify-end gap-2 p-6">
         <p className="text-[28px] leading-[44px] font-bold">
           Frequently Asked Questions

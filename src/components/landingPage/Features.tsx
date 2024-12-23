@@ -34,7 +34,7 @@ const Features= () => {
           alt="screen 2"
           width={495}
           height={475}
-          className="pointer-events-none  z-10 bg-transparent"
+          className="pointer-events-none  z-10 bg-transparent screen2Shadow"
         />
         {/* screen2Shadow */}
       </div>

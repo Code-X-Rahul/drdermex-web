@@ -36,7 +36,7 @@ const PROBLEMS = [
 export default function Home() {
   return (
     <>
-      <MainWrapper className="grid grid-cols-2 gap-10">
+      <MainWrapper className="grid md:grid-cols-2 gap-10">
         <div className="relative flex justify-center items-center ">
           <Image
             className="max-w-[480px] max-h-[460px] z-[1]"
@@ -92,7 +92,7 @@ export default function Home() {
         </p>
       </div>
 
-      <MainWrapper className="py-10 grid grid-cols-2 gap-5">
+      <MainWrapper className="py-10 grid md:grid-cols-2 gap-5">
         <div className="grid gap-5">
           <p className="text-secondary text-2xl font-bold leading-[34px]">
             Skin reflects internal problems
@@ -126,7 +126,7 @@ export default function Home() {
       </MainWrapper>
 
       <div className="bg-primary/10 py-10">
-        <MainWrapper className="grid grid-cols-[40%,_1fr] gap-5">
+        <MainWrapper className="grid md:grid-cols-[40%,_1fr] gap-5">
           <div className="flex items-center justify-center ">
             <Image
               src={"/acne2.jpeg"}
@@ -215,7 +215,7 @@ export default function Home() {
 
       <Features />
       <div className="bg-secondary text-white">
-        <MainWrapper className="py-[100px] px-8 grid grid-cols-2 gap-5">
+        <MainWrapper className="py-[100px] px-8 grid md:grid-cols-2 gap-5">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-4">
               <p className="font-bold text-4xl text-inherit leading-[44px]">
