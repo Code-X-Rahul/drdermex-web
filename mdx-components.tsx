@@ -8,12 +8,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="text-base leading-[22px] font-semibold">
+      <h2 className="text-base leading-[22px] font-semibold py-2">
         {children}
       </h2>
     ),
     p: ({ children }) => (
-      <p className="text-xs leading-5 ">
+      <p className="text-xs leading-5 py-1.5">
         {children}
       </p>
     ),
@@ -21,6 +21,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <li className="text-xs font-bold leading-5 ">
         {children}
       </li>
+    ),
+    ul: ({ children }) => (
+      <ol className="md-ul  ">
+        {children}
+      </ol>
     ),
     
     ...components,

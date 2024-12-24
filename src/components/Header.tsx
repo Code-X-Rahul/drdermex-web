@@ -1,28 +1,29 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 import MainWrapper from "./wrappers/MainWrapper";
+import Link from "next/link";
 
 export const links = [
   {
-    name: "About",
-    url: "#",
+    name: "Home",
+    url: "/",
   },
   {
-    name: "Features",
-    url: "#",
+    name: "Privacy Policy",
+    url: "/privacy-policy",
   },
-  {
-    name: "How it Works?",
-    url: "#",
-  },
-  {
-    name: "Support",
-    url: "#",
-  },
-  {
-    name: "Blog",
-    url: "#",
-  },
+  // {
+  //   name: "How it Works?",
+  //   url: "#",
+  // },
+  // {
+  //   name: "Support",
+  //   url: "#",
+  // },
+  // {
+  //   name: "Blog",
+  //   url: "#",
+  // },
 ];
 
 const Header = () => {
@@ -40,12 +41,11 @@ const Header = () => {
         </div>
         <ul className="list-none flex items-center gap-6">
           {links.map((link) => (
-            <li
-              key={link.name}
-              className="text-text-primary text-sm leading-[19px]"
-            >
-              {link.name}
-            </li>
+            <Link key={link.name} href={link.url}>
+              <li className="text-text-primary text-sm leading-[19px]">
+                {link.name}
+              </li>
+            </Link>
           ))}
         </ul>
         <Button className="font-bold leading-6">

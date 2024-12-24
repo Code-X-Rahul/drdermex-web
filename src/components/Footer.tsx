@@ -3,6 +3,7 @@ import MainWrapper from "./wrappers/MainWrapper";
 import Image from "next/image";
 import { Facebook, Instagram, Send, Twitter, Youtube } from "lucide-react";
 import { links } from "./Header";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -34,15 +35,15 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="grid gap-6">
+        <div className="flex flex-col gap-6">
           <p className="uppercase text-2xl leading-[18px] text-white font-semibold">
             quick link
           </p>
-          <ul className="list-none grid gap-3">
+          <ul className="list-none flex flex-col gap-3">
             {links.map((link) => (
-              <li className="text-white font-medium" key={link.name}>
-                {link.name}
-              </li>
+              <Link href={link.url} key={link.name}>
+                <li className="text-white font-medium">{link.name}</li>
+              </Link>
             ))}
           </ul>
         </div>
