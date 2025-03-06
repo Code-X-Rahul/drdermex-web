@@ -1,7 +1,3 @@
-"use server";
-
-import { revalidatePath } from "next/cache";
-
 export interface DeleteAccountPayload {
   phoneNumber: string;
   reason: string;
@@ -11,7 +7,7 @@ export interface DeleteAccountPayload {
 
 export async function deleteAccount(data: DeleteAccountPayload) {
   try {
-    const response = await fetch(`${process.env.BACKEND_URL}/api/v1/delete_acc/deactivate`, {
+    const response = await fetch("http://43.204.245.96:3000/api/v1/delete_acc/deactivate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,8 +21,6 @@ export async function deleteAccount(data: DeleteAccountPayload) {
     }
 
     const result = await response.json();
-
-    revalidatePath("/");
 
     return { success: true, data: result };
   } catch (error) {
