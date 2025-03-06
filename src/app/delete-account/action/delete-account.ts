@@ -7,7 +7,7 @@ export interface DeleteAccountPayload {
 
 export async function deleteAccount(data: DeleteAccountPayload) {
   try {
-    const response = await fetch("http://43.204.245.96:3000/api/v1/delete_acc/deactivate", {
+    const response = await fetch("https://dev.backend.drdermx.com/api/v1/delete_acc/deactivate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
