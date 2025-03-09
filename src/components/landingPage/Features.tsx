@@ -27,8 +27,8 @@ const FEATURES = [
 
 const Features = () => {
   return (
-    <MainWrapper className='py-20 grid grid-cols-2 gap-5'>
-      <div className='flex items-center justify-center relative'>
+    <MainWrapper className='py-10 px-6 lg:px-0 lg:pt-4 grid-col-1 grid md:grid-cols-2 gap-5'>
+      <div className='flex items-center flex-col md:flex-row justify-center relative'>
         <Image
           src={"/screen2.png"}
           alt='screen 2'
@@ -40,7 +40,7 @@ const Features = () => {
       </div>
 
       <div className='flex flex-col gap-6'>
-        <p className='font-bold leading-[17px] text-secondary text-[40px]'>Key Features</p>
+        <p className='font-bold leading-8 text-secondary text-[40px]'>Key Features</p>
         <div className='grid grid-cols-2 gap-4'>
           {FEATURES.map((feature) => (
             <div

@@ -38,52 +38,58 @@ const PROBLEMS = [
 export default function Home() {
   return (
     <>
-      <MainWrapper className='grid md:grid-cols-2 gap-10'>
-        <div className='relative flex justify-center items-center '>
-          <Image
-            className='max-w-[480px] max-h-[460px] z-[1]'
-            src={"/smiling_lady.png"}
-            alt='smile'
-            layout='responsive'
-            width={480}
-            height={460}
-          />
-          <div className='absolute -left-8 bottom-8'>
+      <MainWrapper className='pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-0'>
+        <div className='mt-0 sm:mt-24 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:w-screen'>
+          <div className='relative flex justify-center items-center '>
             <Image
-              className=''
-              src={"/line.svg"}
+              className='max-w-[480px] max-h-[460px] z-[1]'
+              src={"/smiling_lady.png"}
+              alt='smile'
               layout='responsive'
-              width={235}
-              height={91}
-              alt='line'
+              width={480}
+              height={460}
             />
+            <div className='absolute -left-8 bottom-8'>
+              <Image
+                className=''
+                src={"/line.svg"}
+                layout='responsive'
+                width={235}
+                height={91}
+                alt='line'
+              />
+            </div>
           </div>
         </div>
-        <div className='flex flex-col gap-3 pt-16'>
-          <h3 className='text-secondary text-[56px] leading-[68px] font-bold'>
-            A Skin Health Revolution in India
-          </h3>
-          <p className='text-secondary font-medium text-xl leading-[34px]'>
-            AI Revolution, Image Diagnosis, 98% Accuracy, Cost Effective
-          </p>
-          <div className='flex items-center gap-5'>
-            <Button size={"lg"} className='text-base'>
-              Get Started
-            </Button>
-            <Button
-              size={"lg"}
-              variant={"ghost"}
-              className='text-secondary h-auto font-bold text-base'
-            >
-              <Image
-                layout='responsive'
-                width={50}
-                height={50}
-                src={"/playIcon.svg"}
-                alt='play icon'
-              />
-              Watch Video
-            </Button>
+
+        <div className='px-6 lg:px-0 lg:pt-4'>
+          <div className='flex flex-col gap-3 pt-16'>
+            <h3 className='text-secondary text-[56px] leading-[68px] font-bold'>
+              A Skin Health Revolution in India
+            </h3>
+            <p className='text-secondary font-medium text-xl leading-[34px]'>
+              AI Revolution, Image Diagnosis, 98% Accuracy, Cost Effective
+            </p>
+            <div className='flex items-center gap-5'>
+              <Button size={"lg"} className='text-base'>
+                Get Started
+              </Button>
+              <Button
+                size={"lg"}
+                variant={"ghost"}
+                className='text-secondary h-auto font-bold text-base'
+              >
+                <Image
+                  layout='responsive'
+                  className='p-2'
+                  width={50}
+                  height={50}
+                  src={"/playIcon.svg"}
+                  alt='play icon'
+                />
+                Watch Video
+              </Button>
+            </div>
           </div>
         </div>
       </MainWrapper>
@@ -94,7 +100,7 @@ export default function Home() {
         </p>
       </div>
 
-      <MainWrapper className='py-10 grid md:grid-cols-2 gap-5'>
+      <MainWrapper className='py-10 px-6 lg:px-0 lg:pt-4 grid md:grid-cols-2 gap-5'>
         <div className='grid gap-5'>
           <p className='text-secondary text-2xl font-bold leading-[34px]'>
             Skin reflects internal problems
@@ -138,19 +144,19 @@ export default function Home() {
               className='acneShadow w-[260px] h-[283px] object-cover rounded-[16px]'
             />
           </div>
-          <div className='flex flex-col gap-8'>
+          <div className='flex px-6 lg:px-0 lg:pt-4 flex-col gap-8'>
             <div className='grid gap-5'>
-              <p className=' text-2xl font-bold text-secondary leading-[17px]'>
+              <p className=' text-2xl font-bold text-secondary leading-7'>
                 Skin conditions reveal lifestyle issues:
               </p>
               <div className='grid grid-rows-3 grid-flow-col gap-4'>
-                <p className='text-secondary text-lg font-semibold leading-[17px] flex items-center gap-2'>
+                <p className='text-secondary text-lg font-semibold leading-5 flex items-center gap-2'>
                   <span className='size-[22px] p-1 rounded-full bg-secondary flex items-center justify-center'>
                     <Check color='white' strokeWidth={4} />
                   </span>
                   Sun Damage
                 </p>
-                <p className='text-secondary text-lg font-semibold leading-[17px] flex items-center gap-2'>
+                <p className='text-secondary text-lg font-semibold leading-5 flex items-center gap-2'>
                   <span className='size-[22px] p-1 rounded-full bg-secondary flex items-center justify-center'>
                     <Check color='white' strokeWidth={4} />
                   </span>
@@ -165,7 +171,7 @@ export default function Home() {
               </div>
             </div>
             <div className='grid gap-5'>
-              <p className=' text-2xl font-bold text-secondary leading-[17px]'>
+              <p className=' text-2xl font-bold text-secondary leading-7'>
                 Ignoring problems with skin can lead to the following:
               </p>
               <div className='grid grid-rows-3 grid-flow-col gap-4'>

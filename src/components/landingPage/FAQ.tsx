@@ -37,24 +37,20 @@ const FAQS = [
 ];
 const FAQ = () => {
   return (
-    <MainWrapper className="py-[50px] md:grid grid-cols-[40%,_1fr] gap-5">
-      <div className="text-secondary  border rounded-md flex flex-col justify-end gap-2 p-6">
-        <p className="text-[28px] leading-[44px] font-bold">
-          Frequently Asked Questions
-        </p>
+    <MainWrapper className='py-[50px] px-6 lg:px-0 lg:pt-4 md:grid grid-cols-[40%,_1fr] gap-5'>
+      <div className='text-secondary  border rounded-md flex flex-col justify-end gap-2 p-6'>
+        <p className='text-[28px] leading-[44px] font-bold'>Frequently Asked Questions</p>
         <p>We would be happy to help you with whatever questions you have.</p>
-        <Button className="max-w-fit " size={"lg"}>
+        <Button className='max-w-fit ' size={"lg"}>
           Ask us Anything <ArrowRight />
         </Button>
       </div>
-      <div>
-        <Accordion type="multiple">
+      <div className='px-6 lg:px-0 lg:pt-4'>
+        <Accordion type='multiple'>
           {FAQS.map((faq) => (
             <AccordionItem value={faq.id} key={faq.id}>
-              <AccordionTrigger className="font-bold text-secondary">
-                {faq.title}
-              </AccordionTrigger>
-              <AccordionContent className="text-sm text-secondary">
+              <AccordionTrigger className='font-bold text-secondary'>{faq.title}</AccordionTrigger>
+              <AccordionContent className='text-sm text-secondary'>
                 {faq.description}
               </AccordionContent>
             </AccordionItem>
