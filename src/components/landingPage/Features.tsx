@@ -44,13 +44,15 @@ const Features = () => {
         <div className='grid grid-cols-2 gap-4'>
           {FEATURES.map((feature) => (
             <div
-              className='flex px-5 py-6 items-center gap-3 shadowSmall border border-[#F5F5F5] rounded-[10px]'
+              className='flex flex-col md:flex-row px-5 py-6 items-center gap-3 shadowSmall border border-[#F5F5F5] rounded-[10px]'
               key={feature.name}
             >
               <div className='size-14 rounded-[14px] bg-primary flex items-center justify-center'>
                 <Image width={100} height={100} src={feature.icon} alt='icon' />
               </div>
-              <p className='text-base text-secondary font-bold leading-3'>{feature.name}</p>
+              <p className='text-base text-center text-secondary font-bold leading-5'>
+                {feature.name}
+              </p>
             </div>
           ))}
         </div>
