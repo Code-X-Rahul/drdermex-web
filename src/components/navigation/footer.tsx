@@ -2,7 +2,7 @@ import Image from "next/image";
 import MainWrapper from "../wrappers/MainWrapper";
 import { Send } from "lucide-react";
 
-import { FiFacebook, FiInstagram, FiTwitter, FiYoutube } from "react-icons/fi";
+import { FiFacebook, FiInstagram, FiTwitter, FiLinkedin } from "react-icons/fi";
 import Link from "next/link";
 
 const quickLinks = [
@@ -10,9 +10,32 @@ const quickLinks = [
   { name: "Privacy Policy", href: "/privacy-policy" },
 ];
 
+const socialMediaLinks = [
+  {
+    id: 1,
+    Icon: FiInstagram,
+    link: "https://www.instagram.com/dr_dermx/",
+  },
+  {
+    id: 2,
+    Icon: FiFacebook,
+    link: "https://www.facebook.com/people/DrDermx/61573088566777/",
+  },
+  {
+    id: 3,
+    Icon: FiTwitter,
+    link: "https://x.com/Derm_X",
+  },
+  {
+    id: 4,
+    Icon: FiLinkedin,
+    link: "https://www.linkedin.com/company/drdermx/",
+  },
+];
+
 const Footer = () => {
   return (
-    <footer className='bg-secondary'>
+    <footer className='bg-secondary '>
       <MainWrapper className='mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-0 lg:py-32'>
         <div className='xl:grid xl:grid-cols-3 xl:gap-8'>
           <div className='flex flex-col gap-2'>
@@ -22,18 +45,13 @@ const Footer = () => {
               vitae. Est tellus vitae, nullam lobortis enim.
             </p>
             <div className='flex items-center divide-x-2 divide-white/10'>
-              <div className='p-2'>
-                <FiFacebook className='text-white hover:text-primary text-2xl cursor-pointer' />
-              </div>
-              <div className='p-2'>
-                <FiInstagram className='text-white hover:text-primary text-2xl cursor-pointer' />
-              </div>
-              <div className='p-2'>
-                <FiTwitter className='text-white hover:text-primary text-2xl cursor-pointer' />
-              </div>
-              <div className='p-2'>
-                <FiYoutube className='text-white hover:text-primary text-2xl cursor-pointer' />
-              </div>
+              {socialMediaLinks.map((link) => (
+                <Link key={link.id} href={link.link} target='_blank'>
+                  <div className='p-2'>
+                    <link.Icon className='text-white hover:text-primary text-2xl cursor-pointer' />
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
 
