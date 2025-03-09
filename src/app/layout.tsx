@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "./globals.css";
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
+import Header from "@/components/navigation/Header";
 import Footer from "@/components/Footer";
 
 const inter = Inter({
@@ -22,8 +23,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={`${inter.className} antialiased text-secondary`}>
+        {/* <Header /> */}
         <Header />
 
         {children}
