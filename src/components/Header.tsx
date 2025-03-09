@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "../ui/button";
+import { Button } from "./ui/button";
 
 import dynamic from "next/dynamic";
 
-const MobileMenu = dynamic(() => import("./mobile-menu"));
+const MobileMenu = dynamic(() => import("./navigation/mobile-menu"));
 
 const Header = () => {
   return (
