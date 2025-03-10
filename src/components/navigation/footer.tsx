@@ -8,6 +8,8 @@ import Link from "next/link";
 const quickLinks = [
   { name: "Home", href: "/" },
   { name: "Privacy Policy", href: "/privacy-policy" },
+  { name: "Terms and Conditions", href: "/terms-and-conditions" },
+  { name: "Disclaimer Policy", href: "/disclaimer-policy" },
 ];
 
 const socialMediaLinks = [

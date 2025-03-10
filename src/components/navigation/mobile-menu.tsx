@@ -56,6 +56,18 @@ const MobileMenu = () => {
             >
               Privacy Policy
             </Link>
+            <Link
+              href='/terms-and-conditions'
+              className='block py-2 text-base font-semibold text-gray-900 hover:bg-gray-50'
+            >
+              TnC
+            </Link>
+            <Link
+              href='/disclaimer-policy'
+              className='block py-2 text-base font-semibold text-gray-900 hover:bg-gray-50'
+            >
+              Disclaimer Policy
+            </Link>
           </div>
           <div className='py-3'>
             <Button className='font-bold leading-6'>Download App</Button>

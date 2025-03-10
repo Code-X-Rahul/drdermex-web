@@ -25,6 +25,12 @@ const Header = () => {
           <Link href='/privacy-policy' className='text-sm font-semibold text-gray-900'>
             Privacy Policy
           </Link>
+          <Link href='/terms-and-conditions' className='text-sm font-semibold text-gray-900'>
+            TnC
+          </Link>
+          <Link href='/disclaimer-policy' className='text-sm font-semibold text-gray-900'>
+            Disclaimer Policy
+          </Link>
         </div>
 
         <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
