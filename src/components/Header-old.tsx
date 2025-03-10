@@ -32,13 +32,7 @@ const Header = () => {
     <header className='py-4 primaryShadow  '>
       <MainWrapper className='flex items-center justify-between gap-3'>
         <div>
-          <Image
-            layout='responsive'
-            src={"/Logo.png"}
-            alt='DrDermex logo'
-            width={210}
-            height={100}
-          />
+          <Image src={"/Logo.png"} alt='DrDermex logo' width={210} height={100} />
         </div>
         <ul className='list-none flex items-center gap-6'>
           {links.map((link) => (

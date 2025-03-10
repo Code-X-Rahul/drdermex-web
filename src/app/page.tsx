@@ -45,19 +45,11 @@ export default function Home() {
               className='max-w-[480px] max-h-[460px] z-[1]'
               src={"/smiling_lady.png"}
               alt='smile'
-              layout='responsive'
               width={480}
               height={460}
             />
             <div className='absolute -left-8 bottom-8'>
-              <Image
-                className=''
-                src={"/line.svg"}
-                layout='responsive'
-                width={235}
-                height={91}
-                alt='line'
-              />
+              <Image className='' src={"/line.svg"} width={235} height={91} alt='line' />
             </div>
           </div>
         </div>
@@ -80,7 +72,6 @@ export default function Home() {
                 className='text-secondary h-auto font-bold text-base'
               >
                 <Image
-                  layout='responsive'
                   className='p-2'
                   width={50}
                   height={50}
