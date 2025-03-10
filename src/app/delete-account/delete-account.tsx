@@ -40,7 +40,7 @@ function DeleteAccountForm() {
     if (!phoneNumber || !platForm) return;
 
     const payload: DeleteAccountPayload = {
-      phoneNumber: `+${phoneNumber.trim()}`,
+      phoneNumber: `${phoneNumber.trim()}`,
       reason: formData.reason,
       otp: formData.otp,
       platForm,
