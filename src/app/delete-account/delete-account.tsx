@@ -29,6 +29,10 @@ function DeleteAccountForm() {
     otp: "",
   });
 
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [successMsg, setSuccessMsg] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
   const updateFormData = (field: string, value: string) => {
     setFormData((prev) => ({
       ...prev,
@@ -36,17 +40,29 @@ function DeleteAccountForm() {
     }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!phoneNumber || !platForm) return;
 
+    setIsLoading(true);
+    setErrorMsg(null);
+    setSuccessMsg(null);
+
     const payload: DeleteAccountPayload = {
-      phoneNumber: `${phoneNumber.trim()}`,
+      phoneNumber: `+${phoneNumber.trim()}`,
       reason: formData.reason,
       otp: formData.otp,
       platForm,
     };
 
-    deleteAccount(payload);
+    const response = await deleteAccount(payload);
+
+    if (response.success) {
+      setSuccessMsg("Account successfully deleted");
+      setIsLoading(false);
+    } else {
+      setErrorMsg(response.error ?? "An unknown error occurred");
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -101,18 +117,27 @@ function DeleteAccountForm() {
         </div>
       </form>
 
+      {successMsg && (
+        <div className='text-green-600 text-center font-medium bg-green-100 border border-green-300 p-2 rounded-md'>
+          {successMsg}
+        </div>
+      )}
+
+      {errorMsg && (
+        <div className='text-red-500 text-center font-medium bg-red-100 border border-red-300 p-2 rounded-md'>
+          {errorMsg}
+        </div>
+      )}
+
       {/* CTA Buttons  */}
       <div className='flex justify-center gap-4'>
-        <Button className='basis-1/2' variant='outline'>
-          Cancel
-        </Button>
         <Button
           onClick={handleSubmit}
-          className='basis-1/2'
+          className='basis-full'
           variant='destructive'
           disabled={!formData.reason || formData.otp.length < 6}
         >
-          Delete Account
+          {isLoading ? "Deleting..." : "Delete Account"}
         </Button>
       </div>
     </div>

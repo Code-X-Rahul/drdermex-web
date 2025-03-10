@@ -17,17 +17,13 @@ export async function deleteAccount(data: DeleteAccountPayload) {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.message || "Failed to delete account");
+      return { success: false, error: errorData.message || "Failed to delete account" };
     }
 
     const result = await response.json();
-
     return { success: true, data: result };
   } catch (error) {
     console.error("Error deleting account:", error);
-    return {
-      success: false,
-      error: error instanceof Error ? error.message : "An unknown error occurred",
-    };
+    return { success: false, error: "An unknown error occurred" };
   }
 }
