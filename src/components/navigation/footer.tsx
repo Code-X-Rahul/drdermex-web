@@ -4,6 +4,7 @@ import { Send } from "lucide-react";
 
 import { FiFacebook, FiInstagram, FiTwitter, FiLinkedin } from "react-icons/fi";
 import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -32,6 +33,11 @@ const socialMediaLinks = [
     id: 4,
     Icon: FiLinkedin,
     link: "https://www.linkedin.com/company/drdermx/",
+  },
+  {
+    id: 5,
+    Icon: FaWhatsapp,
+    link: "whatsapp://channel/0029Vb3mK8LIXnljxJ2ERc0C",
   },
 ];
 
