@@ -47,7 +47,7 @@ export function ImageCarousel() {
       <Carousel
         plugins={[
           Autoplay({
-            delay: 2000,
+            delay: 5000,
           }),
         ]}
         setApi={setApi}
