@@ -3,8 +3,9 @@ import MainWrapper from "../wrappers/MainWrapper";
 import { Send } from "lucide-react";
 
 import { FiFacebook, FiInstagram, FiTwitter, FiLinkedin } from "react-icons/fi";
+
 import Link from "next/link";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaYoutube } from "react-icons/fa";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -38,6 +39,11 @@ const socialMediaLinks = [
     id: 5,
     Icon: FaWhatsapp,
     link: "whatsapp://channel/0029Vb3mK8LIXnljxJ2ERc0C",
+  },
+  {
+    id: 5,
+    Icon: FaYoutube,
+    link: "https://www.youtube.com/@DrDermx/",
   },
 ];
 
