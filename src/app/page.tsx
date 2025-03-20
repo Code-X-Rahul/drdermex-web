@@ -81,7 +81,7 @@ export default function Home() {
 
       <div className='bg-primary/10 p-5 flex items-center justify-center '>
         <p className='text-3xl leading-8 font-bold text-primary text-center'>
-          SKIN A WINDOW TO BODY’S HEALTH
+          Skin: A Window to Body&apos;s Health
         </p>
       </div>
 
