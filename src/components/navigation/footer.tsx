@@ -41,7 +41,7 @@ const socialMediaLinks = [
     link: "whatsapp://channel/0029Vb3mK8LIXnljxJ2ERc0C",
   },
   {
-    id: 5,
+    id: 6,
     Icon: FaYoutube,
     link: "https://www.youtube.com/@DrDermx/",
   },
