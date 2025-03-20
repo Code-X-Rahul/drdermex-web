@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Dermx",
+  title: "DrDermx",
   description: "A Skin Health Revolution in India",
 };
 
