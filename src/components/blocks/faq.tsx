@@ -10,8 +10,10 @@ interface FaqSectionProps extends React.HTMLAttributes<HTMLElement> {
   title: string;
   description?: string;
   items: {
+    id: string;
     question: string;
     answer: string;
+    listItems?: string[];
   }[];
 }
 
@@ -45,7 +47,13 @@ const FaqSection = React.forwardRef<HTMLElement, FaqSectionProps>(
           {/* FAQ Items */}
           <div className='max-w-2xl mx-auto space-y-2'>
             {items.map((item, index) => (
-              <FaqItem key={index} question={item.question} answer={item.answer} index={index} />
+              <FaqItem
+                key={item.id || index}
+                question={item.question}
+                answer={item.answer}
+                listItems={item.listItems}
+                index={index}
+              />
             ))}
           </div>
         </div>
@@ -61,11 +69,12 @@ const FaqItem = React.forwardRef<
   {
     question: string;
     answer: string;
+    listItems?: string[];
     index: number;
   }
 >((props, ref) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const { question, answer, index } = props;
+  const { question, answer, listItems, index } = props;
 
   return (
     <motion.div
@@ -127,14 +136,26 @@ const FaqItem = React.forwardRef<
             }}
           >
             <div className='px-4 sm:px-6 pb-4 pt-2'>
-              <motion.p
+              <motion.div
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -10, opacity: 0 }}
                 className='text-sm text-muted-foreground leading-relaxed break-words'
               >
-                {answer}
-              </motion.p>
+                <p>{answer}</p>
+
+                {/* Render list items if they exist */}
+                {listItems && listItems.length > 0 && (
+                  <ul className='list-none pl-0 mt-2 space-y-1'>
+                    {listItems.map((item, i) => (
+                      <li key={i} className='flex items-start'>
+                        <span className='mr-2 flex-shrink-0'>•</span>
+                        <span className='flex-grow'>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </motion.div>
             </div>
           </motion.div>
         )}

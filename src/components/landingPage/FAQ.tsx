@@ -21,6 +21,15 @@ const FAQs = [
     id: "3",
     question: "What skin conditions can Drdermx diagnose",
     answer: "Drdermx can assist with a wide range of skin conditions around 3000+ including:",
+    listItems: [
+      "Acne and acne scars, wrinkle, Hair loss",
+      "Pigmentation issues (melasma, dark spots)",
+      "Eczema and psoriasis",
+      "Fungal infections (skin and nail)",
+      "Phrynoderma (Vitamin A deficiency)",
+      "Scabies, pellagra, and Hansen's disease",
+      "Chronic urticaria (hives)",
+    ],
   },
   {
     id: "4",
