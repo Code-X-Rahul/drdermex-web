@@ -1,62 +1,79 @@
+"use client";
+
 import React from "react";
 import MainWrapper from "../wrappers/MainWrapper";
-import { Button } from "../ui/button";
-import { ArrowRight } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { FaqSection } from "../blocks/faq";
 
-const FAQS = [
+const FAQs = [
   {
     id: "1",
-    title: "Scrambled it to make a type specimen book?",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    question: "What is Drdermx?",
+    answer:
+      "Drdermx is an AI-powered dermatology platform that provides expert skin disease diagnosis and holistic skin health solutions. Our platform combines AI-driven image-based assessments with consultations from Medical Council registered Dermatologists to offer accurate, personalized treatment plans.",
   },
   {
     id: "2",
-    title: "When an unknown printer took a galley of type?",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    question: "How does Drdermx work?",
+    answer:
+      "Drdermx uses AI technology to analyze skin images and provide a preliminary diagnosis. You can upload an image of your skin condition, and our system, along with experienced dermatologists, will assess it and provide expert recommendations, including treatment plans and lifestyle advice.",
   },
   {
     id: "3",
-    title: "Scrambled it to make a type specimen book?",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    question: "What skin conditions can Drdermx diagnose",
+    answer: "Drdermx can assist with a wide range of skin conditions around 3000+ including:",
   },
   {
     id: "4",
-    title: "Scrambled it to make a type specimen book?",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    question: "Are the doctors on Drdermx qualified?",
+    answer:
+      "Yes! All dermatologists on Drdermx are Medical Council registered Dermatologists who have completed MBBS with 2-3 years of MD/DNB or a Diploma in Skin and Venereal Diseases.",
+  },
+  {
+    id: "5",
+    question: "Is Drdermx only for individuals, or can doctors use it too?",
+    answer:
+      "Drdermx is designed for everyone. It can be used by individuals looking for expert dermatology care as well as general practitioners, other specialty doctors, and frontline health workers to assist in diagnosing and managing skin diseases.",
+  },
+  {
+    id: "6",
+    question: "Do I need an appointment to use Drdermx?",
+    answer:
+      "No, Drdermx provides instant AI-powered analysis, and you can consult a dermatologist without the hassle of booking a traditional appointment.",
+  },
+  {
+    id: "7",
+    question: "Does Drdermx provide personalized treatment plans?",
+    answer:
+      "Yes, after diagnosis, our dermatologists provide personalized treatment plans, including prescriptions, skincare routines, and diet and yoga recommendations for holistic skin wellness.",
+  },
+  {
+    id: "8",
+    question: "Is Drdermx a replacement for in-person dermatology visits?",
+    answer:
+      "Drdermx is designed to provide convenient and expert skin health guidance, but for severe or complex cases, an in-person visit may still be necessary. Our platform helps in early detection, differential diagnosis, and effective management of common skin concerns.",
+  },
+  {
+    id: "9",
+    question: "How secure is my data on Drdermx?",
+    answer:
+      " We take privacy and security seriously. All your personal and medical information is encrypted and stored securely, ensuring confidentiality at every step.",
+  },
+  {
+    id: "10",
+    question: "How can I get started with Drdermx?",
+    answer:
+      "Simply visit our website, upload an image of your skin concern, and receive expert-driven analysis and guidance from qualified dermatologists. It’s fast, reliable, and easy to use.",
   },
 ];
+
 const FAQ = () => {
   return (
-    <MainWrapper className='py-[50px] px-6 lg:px-0 lg:pt-4 md:grid grid-cols-[40%,_1fr] gap-5'>
-      <div className='text-secondary  border rounded-md flex flex-col justify-end gap-2 p-6'>
-        <p className='text-[28px] leading-[44px] font-bold'>Frequently Asked Questions</p>
-        <p>We would be happy to help you with whatever questions you have.</p>
-        <Button className='max-w-fit ' size={"lg"}>
-          Ask us Anything <ArrowRight />
-        </Button>
-      </div>
-      <div className='px-6 lg:px-0 lg:pt-4'>
-        <Accordion type='multiple'>
-          {FAQS.map((faq) => (
-            <AccordionItem value={faq.id} key={faq.id}>
-              <AccordionTrigger className='font-bold text-secondary'>{faq.title}</AccordionTrigger>
-              <AccordionContent className='text-sm text-secondary'>
-                {faq.description}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </div>
+    <MainWrapper className='py-[50px] px-6 lg:px-0 lg:pt-4 md:grid grid-cols-1 gap-5'>
+      <FaqSection
+        title='Frequently Asked Questions'
+        description='We would be happy to help you with whatever questions you have'
+        items={FAQs}
+      />
     </MainWrapper>
   );
 };
