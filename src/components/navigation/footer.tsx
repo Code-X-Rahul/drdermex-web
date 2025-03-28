@@ -18,7 +18,7 @@ const socialMediaLinks = [
   {
     id: 1,
     Icon: FiInstagram,
-    link: "https://www.instagram.com/dr_dermx/",
+    link: "https://www.instagram.com/drdermx_official",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const socialMediaLinks = [
   {
     id: 3,
     Icon: FiTwitter,
-    link: "https://x.com/Derm_X",
+    link: "https://x.com/DrDermXofficial",
   },
   {
     id: 4,
