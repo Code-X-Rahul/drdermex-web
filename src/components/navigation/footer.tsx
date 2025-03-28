@@ -55,8 +55,8 @@ const Footer = () => {
           <div className='flex flex-col gap-2'>
             <Image src={"/footerLogo.svg"} alt='DrDermex logo' width={150} height={34} />
             <p className='text-white'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit
-              vitae. Est tellus vitae, nullam lobortis enim.
+              DrDermx is one stop solution for all skin ailments/ diseases, an AI-powered
+              dermatology platform providing fast, affordable, and expert-led skin diagnoses.
             </p>
             <div className='flex items-center divide-x-2 divide-white/10'>
               {socialMediaLinks.map((link) => (
