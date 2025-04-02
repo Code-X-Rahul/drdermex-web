@@ -7,6 +7,7 @@ import { Check } from "lucide-react";
 import Image from "next/image";
 import DeepLearning from "./../../public/deepLearning.svg";
 import Accuracy from "./../../public/accuracy.svg";
+import AboutUsSection from "@/components/about-us";
 
 const PROBLEMS = [
   {
@@ -84,6 +85,10 @@ export default function Home() {
           Skin: A Window to Body&apos;s Health
         </p>
       </div>
+
+      <MainWrapper>
+        <AboutUsSection />
+      </MainWrapper>
 
       <MainWrapper className='py-10 px-6 lg:px-0 lg:pt-4 grid md:grid-cols-2 gap-5'>
         <div className='grid gap-5'>
