@@ -37,7 +37,7 @@ export default function AboutUsSection() {
             </h3>
 
             <p className='text-slate-700'>
-              At Drdermx, we believe that expert skin care should be accessible, accurate, and
+              At DrDermx, we believe that expert skin care should be accessible, accurate, and
               affordable for everyone. Our AI-powered dermatology platform combines advanced
               technology with the expertise of Medical Council registered Dermatologists.
             </p>
@@ -71,7 +71,7 @@ export default function AboutUsSection() {
 
             <p className='text-slate-700'>
               Whether you&apos;re dealing with acne, pigmentation, eczema, or fungal infections, we
-              offer personalized treatment plans and expert consultations. Drdermx is trusted by
+              offer personalized treatment plans and expert consultations. DrDermx is trusted by
               dermatologists, general practitioners, and frontline health workers.
             </p>
 
