@@ -221,7 +221,7 @@ export default function Home() {
               <p className='text-sm leading-6 text-inherit'>
                 Skin diseases affect millions globally and one third population in India.
                 Traditional diagnostic methods are often invasive, inaccessible, or inaccurate,
-                hindering early detection and treatment. Drdermx,{" "}
+                hindering early detection and treatment. DrDermx,{" "}
                 <span className='font-bold underline cursor-pointer'>Read more</span>
               </p>
             </div>

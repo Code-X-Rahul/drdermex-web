@@ -20,7 +20,7 @@ export default function AboutUsSection() {
             <div className='relative flex justify-center'>
               <div className='absolute -top-4 -left-4 w-24 h-24 bg-pink-100 rounded-full z-0'></div>
               <Image
-                src='/about-us.png'
+                src='/aboutus-img.png'
                 width={400}
                 height={500}
                 alt='DrDermx AI Dermatology'
