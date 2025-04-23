@@ -38,8 +38,8 @@ export default function AboutUsSection() {
 
             <p className='text-slate-700'>
               At DrDermx, we believe that expert skin care should be accessible, accurate, and
-              affordable for everyone. Our AI-powered dermatology platform combines advanced
-              technology with the expertise of Medical Council registered Dermatologists.
+              affordable for everyone. Our platform combines advanced technology with the expertise
+              of Medical Council registered Dermatologists.
             </p>
 
             {/* Feature Cards */}

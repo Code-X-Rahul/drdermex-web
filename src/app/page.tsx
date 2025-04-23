@@ -55,7 +55,7 @@ export default function Home() {
               A Skin Health Revolution in India
             </h3>
             <p className='text-secondary font-medium text-xl leading-[34px]'>
-              AI Revolution, Image Diagnosis, 98% Accuracy, Cost Effective
+              Revolutionalise Image Diagnosis, 98% Accuracy, Cost Effective
             </p>
             <div className='flex items-center gap-5'>
               <Button size={"lg"} className='text-base'>

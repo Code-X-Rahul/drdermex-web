@@ -9,13 +9,13 @@ const FAQs = [
     id: "1",
     question: "What is DrDermx?",
     answer:
-      "DrDermx is an AI-powered dermatology platform that provides expert skin disease diagnosis and holistic skin health solutions. Our platform combines AI-driven image-based assessments with consultations from Medical Council registered Dermatologists to offer accurate, personalized treatment plans.",
+      "DrDermx is a dermatology platform that provides expert skin disease diagnosis and holistic skin health solutions. Our platform combines image-based assessments with consultations from Medical Council registered Dermatologists to offer accurate, personalized treatment plans.",
   },
   {
     id: "2",
     question: "How does DrDermx work?",
     answer:
-      "DrDermx uses AI technology to analyze skin images and provide a preliminary diagnosis. You can upload an image of your skin condition, and our system, along with experienced dermatologists, will assess it and provide expert recommendations, including treatment plans and lifestyle advice.",
+      "DrDermx uses cutting edge technology to analyze skin images and provide a preliminary diagnosis. You can upload an image of your skin condition, and our system, along with experienced dermatologists, will assess it and provide expert recommendations, including treatment plans and lifestyle advice.",
   },
   {
     id: "3",
@@ -47,7 +47,7 @@ const FAQs = [
     id: "6",
     question: "Do I need an appointment to use DrDermx?",
     answer:
-      "No, DrDermx provides instant AI-powered analysis, and you can consult a dermatologist without the hassle of booking a traditional appointment.",
+      "No, DrDermx provides instant analysis, and you can consult a dermatologist without the hassle of booking a traditional appointment.",
   },
   {
     id: "7",
