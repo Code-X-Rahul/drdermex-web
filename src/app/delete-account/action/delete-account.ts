@@ -7,17 +7,23 @@ export interface DeleteAccountPayload {
 
 export async function deleteAccount(data: DeleteAccountPayload) {
   try {
-    const response = await fetch("https://dev.backend.drdermx.com/api/v1/delete_acc/deactivate", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    const response = await fetch(
+      "https://prod.backend.drdermx.com/api/v1/delete_acc/deactivate",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
 
     if (!response.ok) {
       const errorData = await response.json();
-      return { success: false, error: errorData.message || "Failed to delete account" };
+      return {
+        success: false,
+        error: errorData.message || "Failed to delete account",
+      };
     }
 
     const result = await response.json();
