@@ -5,12 +5,14 @@ import Link from "next/link";
 
 const APP_LINKS = {
   ios: {
-    patient: "https://apps.apple.com/app/idPATIENT_APP_ID",
-    doctor: "https://apps.apple.com/app/idDOCTOR_APP_ID",
+    patient: "https://apps.apple.com/in/app/drdermx/id6739869233",
+    doctor: "https://apps.apple.com/in/app/drdermx/id6739869233",
   },
   android: {
-    patient: "https://play.google.com/store/apps/details?id=patient.app.package",
-    doctor: "https://play.google.com/store/apps/details?id=doctor.app.package",
+    patient:
+      "https://play.google.com/store/apps/details?id=com.drdermx.drdermx&pcampaignid=web_share",
+    doctor:
+      "https://play.google.com/store/apps/details?id=com.drdermx.drdermx_doctor&pcampaignid=web_share",
   },
 };
 
