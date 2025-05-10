@@ -16,21 +16,21 @@ const APP_LINKS = {
 
 const RegisterRedirector = () => {
   const searchParams = useSearchParams();
-  const role = searchParams.get("role");
+  const user = searchParams.get("user");
 
   useEffect(() => {
-    if (role !== "doctor" && role !== "patient") return;
+    if (user !== "doctor" && user !== "patient") return;
     const userAgent = typeof window !== "undefined" ? navigator.userAgent || navigator.vendor : "";
     if (/iPad|iPhone|iPod/.test(userAgent)) {
-      window.location.href = APP_LINKS.ios[role];
+      window.location.href = APP_LINKS.ios[user];
     } else if (/android/i.test(userAgent)) {
-      window.location.href = APP_LINKS.android[role];
+      window.location.href = APP_LINKS.android[user];
     } else {
       // notFound();
     }
-  }, [role]);
+  }, [user]);
 
-  if (role !== "doctor" && role !== "patient") {
+  if (user !== "doctor" && user !== "patient") {
     notFound();
     return null;
   }
