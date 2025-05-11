@@ -8,6 +8,8 @@ import Image from "next/image";
 import DeepLearning from "./../../public/deepLearning.svg";
 import Accuracy from "./../../public/accuracy.svg";
 import AboutUsSection from "@/components/about-us";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { FaCheckCircle } from "react-icons/fa";
 
 const PROBLEMS = [
   {
@@ -207,6 +209,79 @@ export default function Home() {
           health and well-being especially in remote settings.
         </p>
       </div>
+
+      <MainWrapper className='py-16'>
+        <div className='grid md:grid-cols-2 gap-8'>
+          <Card className='border-[1px] border-primary p-8'>
+            <CardHeader>
+              <div className='flex flex-col gap-2'>
+                <Image src={"/Logo.png"} alt='DrDermex logo' width={180} height={100} />
+                <span className='text-2xl font-semibold text-primary'>for Patients</span>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className='flex flex-col gap-3 my-4'>
+                <li className='flex items-center gap-2 text-lg text-[#2B384C]'>
+                  <span className='text-primary'>
+                    <FaCheckCircle />
+                  </span>
+                  Image-based diagnosis
+                </li>
+                <li className='flex items-center gap-2 text-lg text-[#2B384C]'>
+                  <span className='text-primary'>
+                    <FaCheckCircle />
+                  </span>
+                  Book consultations
+                </li>
+                <li className='flex items-center gap-2 text-lg text-[#2B384C]'>
+                  <span className='text-primary'>
+                    <FaCheckCircle />
+                  </span>
+                  Treatment tracking
+                </li>
+              </ul>
+              <div className='flex gap-3 mt-8'>
+                <Image src='/appstore.svg' alt='App Store' width={140} height={42} />
+                <Image src='/playstore.png' alt='Google Play' width={140} height={42} />
+              </div>
+            </CardContent>
+          </Card>
+          <Card className='border-[1px] border-primary shadow-md p-8'>
+            <CardHeader>
+              <div className='flex flex-col gap-2'>
+                <Image src={"/Logo.png"} alt='DrDermex logo' width={180} height={100} />
+                <span className='text-2xl font-semibold text-primary'>for Professionals</span>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className='flex flex-col gap-3 my-4'>
+                <li className='flex items-center gap-2 text-lg text-[#2B384C]'>
+                  <span className='text-primary'>
+                    <FaCheckCircle />
+                  </span>
+                  Diagnose and manage patients
+                </li>
+                <li className='flex items-center gap-2 text-lg text-[#2B384C]'>
+                  <span className='text-primary'>
+                    <FaCheckCircle />
+                  </span>
+                  In-clinic & teleconsult support
+                </li>
+                <li className='flex items-center gap-2 text-lg text-[#2B384C]'>
+                  <span className='text-primary'>
+                    <FaCheckCircle />
+                  </span>
+                  Manage appointments, history
+                </li>
+              </ul>
+              <div className='flex gap-3 mt-8'>
+                <Image src='/appstore.svg' alt='App Store' width={140} height={42} />
+                <Image src='/playstore.png' alt='Google Play' width={140} height={42} />
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </MainWrapper>
 
       <Benefits />
 
