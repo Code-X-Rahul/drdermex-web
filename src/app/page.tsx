@@ -10,6 +10,7 @@ import Accuracy from "./../../public/accuracy.svg";
 import AboutUsSection from "@/components/about-us";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { FaCheckCircle } from "react-icons/fa";
+import Link from "next/link";
 
 const PROBLEMS = [
   {
@@ -240,9 +241,35 @@ export default function Home() {
                   Treatment tracking
                 </li>
               </ul>
-              <div className='flex gap-3 mt-8'>
-                <Image src='/appstore.svg' alt='App Store' width={140} height={42} />
-                <Image src='/playstore.png' alt='Google Play' width={140} height={42} />
+              <div className='flex gap-6 mt-8 items-center'>
+                <Link
+                  target='_blank'
+                  href='https://apps.apple.com/in/app/drdermx/id6739869233'
+                  className='flex items-center'
+                  style={{ height: "42px" }}
+                >
+                  <Image
+                    src='/appstore.svg'
+                    alt='App Store'
+                    width={140}
+                    height={42}
+                    style={{ height: "42px", width: "auto" }}
+                  />
+                </Link>
+                <Link
+                  target='_blank'
+                  href='https://play.google.com/store/apps/details?id=com.drdermx.drdermx&pcampaignid=web_share'
+                  className='flex items-center'
+                  style={{ height: "42px" }}
+                >
+                  <Image
+                    src='/playstore.png'
+                    alt='Google Play'
+                    width={140}
+                    height={42}
+                    style={{ height: "42px", width: "auto" }}
+                  />
+                </Link>
               </div>
             </CardContent>
           </Card>
@@ -274,9 +301,22 @@ export default function Home() {
                   Manage appointments, history
                 </li>
               </ul>
-              <div className='flex gap-3 mt-8'>
-                <Image src='/appstore.svg' alt='App Store' width={140} height={42} />
-                <Image src='/playstore.png' alt='Google Play' width={140} height={42} />
+              <div className='flex gap-6 mt-8'>
+                <Link href='#'>
+                  <Image
+                    src='/appstore.svg'
+                    alt='App Store'
+                    width={140}
+                    height={42}
+                    style={{ height: "42px", width: "auto" }}
+                  />
+                </Link>
+                <Link
+                  target='_blank'
+                  href='https://play.google.com/store/apps/details?id=com.drdermx.drdermx_doctor&pcampaignid=web_share'
+                >
+                  <Image src='/playstore.png' alt='Google Play' width={140} height={42} />
+                </Link>
               </div>
             </CardContent>
           </Card>
