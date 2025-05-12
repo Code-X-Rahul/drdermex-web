@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
 import "./globals.css";
-
 import Footer from "@/components/navigation/footer";
 import Header from "@/components/Header";
 import { Suspense } from "react";
+import { ScrollProvider } from "@/context/ScrollContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,10 +25,12 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${inter.className} antialiased text-secondary`}>
-        <Header />
+        <ScrollProvider>
+          <Header />
 
-        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
-        <Footer />
+          <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+          <Footer />
+        </ScrollProvider>
       </body>
     </html>
   );

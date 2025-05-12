@@ -1,12 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
-
+import { useScroll } from "@/context/ScrollContext";
 import dynamic from "next/dynamic";
 
 const MobileMenu = dynamic(() => import("./navigation/mobile-menu"));
 
 const Header = () => {
+  const { scrollToDownload } = useScroll();
+
   return (
     <header className='bg-white shadow-md'>
       <nav className='mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8'>
@@ -34,7 +38,9 @@ const Header = () => {
         </div>
 
         <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
-          <Button className='font-bold leading-6'>Download App</Button>
+          <Button onClick={scrollToDownload} className='font-bold leading-6'>
+            Download App
+          </Button>
         </div>
       </nav>
     </header>
