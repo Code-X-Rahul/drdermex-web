@@ -3,8 +3,10 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "YOUR_ANDROID_PACKAGE_NAME",
-      "sha256_cert_fingerprints": ["YOUR_SHA256_CERT_FINGERPRINT"]
+      "package_name": "com.drdermx.drdermx",
+      "sha256_cert_fingerprints": [
+        "C4:75:A4:E2:09:98:4B:67:BC:EF:06:7B:9C:80:66:D5:6E:9B:88:BA:B0:DD:E1:B4:9F:40:68:AC:2D:4C:BA:90"
+      ]
     }
   }
 ]
