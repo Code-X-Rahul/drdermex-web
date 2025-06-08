@@ -48,7 +48,7 @@ function DeleteAccountForm() {
     setSuccessMsg(null);
 
     const payload: DeleteAccountPayload = {
-      phoneNumber: `+${phoneNumber.trim()}`,
+      phoneNumber: `${phoneNumber.trim()}`,
       reason: formData.reason,
       otp: formData.otp,
       platForm,
