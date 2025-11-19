@@ -1,7 +1,6 @@
 import Benefits from "@/components/landingPage/Benefits";
 import FAQ from "@/components/landingPage/FAQ";
 import Features from "@/components/landingPage/Features";
-import { Button } from "@/components/ui/button";
 import MainWrapper from "@/components/wrappers/MainWrapper";
 import { Check } from "lucide-react";
 import Image from "next/image";
@@ -58,25 +57,6 @@ export default function Home() {
             <p className='text-secondary font-medium text-xl leading-[34px]'>
               Revolutionalise Image Diagnosis, 98% Accuracy, Cost Effective
             </p>
-            <div className='flex items-center gap-5'>
-              <Button size={"lg"} className='text-base'>
-                Get Started
-              </Button>
-              <Button
-                size={"lg"}
-                variant={"ghost"}
-                className='text-secondary h-auto font-bold text-base'
-              >
-                <Image
-                  className='p-2'
-                  width={50}
-                  height={50}
-                  src={"/playIcon.svg"}
-                  alt='play icon'
-                />
-                Watch Video
-              </Button>
-            </div>
           </div>
         </div>
       </MainWrapper>
