@@ -12,8 +12,7 @@ const APP_LINKS = {
 
 const isInstagramWebView = () => {
   if (typeof window === "undefined") return false;
-  const ua = navigator.userAgent;
-  return /FBAN|FBAV|Instagram/.test(ua);
+  return /FBAN|FBAV|Instagram/.test(navigator.userAgent);
 };
 
 export default function Download() {
@@ -22,60 +21,26 @@ export default function Download() {
   const [redirectUrl, setRedirectUrl] = useState<string | null>(null);
 
   useEffect(() => {
-    const userAgent = typeof window !== "undefined" ? navigator.userAgent : "";
+    const ua = navigator.userAgent;
     const inWebView = isInstagramWebView();
     setIsWebView(inWebView);
 
-    if (/iPad|iPhone|iPod/.test(userAgent)) {
+    if (/iPad|iPhone|iPod/.test(ua)) {
       setDeviceType("ios");
-      if (!inWebView) {
-        setRedirectUrl(APP_LINKS.ios);
-      }
-    } else if (/android/i.test(userAgent)) {
+      if (!inWebView) setRedirectUrl(APP_LINKS.ios);
+    } else if (/android/i.test(ua)) {
       setDeviceType("android");
-      if (!inWebView) {
-        setRedirectUrl(APP_LINKS.android);
-      }
+      if (!inWebView) setRedirectUrl(APP_LINKS.android);
     }
   }, []);
 
+  const appStoreLink = deviceType === "ios" ? APP_LINKS.iosWebView : APP_LINKS.android;
 
   return (
     <>
       {redirectUrl && <meta httpEquiv="refresh" content={`0;url=${redirectUrl}`} />}
       <div className='flex-1 flex flex-col items-center justify-center p-8 text-center'>
-        {isWebView && deviceType !== "desktop" ? (
-          <>
-            <h1 className='text-2xl font-bold mb-4'>Download DrDermX</h1>
-            <p className='text-lg mb-8 text-gray-600'>
-              Tap the button below to download the app
-            </p>
-
-            <a
-              href={deviceType === "ios" ? APP_LINKS.iosWebView : APP_LINKS.android}
-              className='inline-block px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-all'
-            >
-              {deviceType === "ios"
-                ? "Download from App Store"
-                : "Download from Play Store"}
-            </a>
-          </>
-        ) : deviceType !== "desktop" ? (
-          <>
-            <h1 className='text-2xl font-bold mb-4'>
-              {deviceType === "ios"
-                ? "Redirecting to App Store..."
-                : "Redirecting to Google Play Store..."}
-            </h1>
-            <p>
-              If nothing happens,{" "}
-              <Link href='/' className='text-primary underline'>
-                click here
-              </Link>{" "}
-              to go back.
-            </p>
-          </>
-        ) : (
+        {deviceType === "desktop" ? (
           <>
             <h1 className='text-2xl font-bold mb-4'>Download DrDermX</h1>
             <p className='mb-8'>
@@ -117,6 +82,38 @@ export default function Download() {
               <Link href='/' className='text-primary underline'>
                 Go back to home
               </Link>
+            </p>
+          </>
+        ) : isWebView ? (
+          <>
+            <h1 className='text-2xl font-bold mb-8'>Download DrDermX</h1>
+            <a
+              href={appStoreLink}
+              className='flex items-center'
+              style={{ height: "42px" }}
+            >
+              <Image
+                src={deviceType === "ios" ? "/appstore.svg" : "/playstore.png"}
+                alt={deviceType === "ios" ? "App Store" : "Google Play"}
+                width={140}
+                height={42}
+                style={{ height: "42px", width: "auto" }}
+              />
+            </a>
+          </>
+        ) : (
+          <>
+            <h1 className='text-2xl font-bold mb-4'>
+              {deviceType === "ios"
+                ? "Redirecting to App Store..."
+                : "Redirecting to Google Play Store..."}
+            </h1>
+            <p>
+              If nothing happens,{" "}
+              <Link href='/' className='text-primary underline'>
+                click here
+              </Link>{" "}
+              to go back.
             </p>
           </>
         )}
