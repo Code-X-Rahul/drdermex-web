@@ -5,6 +5,7 @@ import Image from "next/image";
 
 const APP_LINKS = {
   ios: "https://apps.apple.com/in/app/drdermx/id6739869233",
+  iosWebView: "https://gotoapp.store/drdermx",
   android:
     "https://play.google.com/store/apps/details?id=com.drdermx.drdermx&pcampaignid=web_share",
 };
@@ -47,16 +48,16 @@ export default function Download() {
           <>
             <h1 className='text-2xl font-bold mb-4'>Download DrDermX</h1>
             <p className='text-lg mb-8 text-gray-600'>
-              Tap the button below to open in your browser and download the app
+              Tap the button below to download the app
             </p>
 
             <a
-              href={deviceType === "ios" ? APP_LINKS.ios : APP_LINKS.android}
+              href={deviceType === "ios" ? APP_LINKS.iosWebView : APP_LINKS.android}
               className='inline-block px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-all'
             >
               {deviceType === "ios"
-                ? "Open in Safari"
-                : "Open in Chrome"}
+                ? "Download from App Store"
+                : "Download from Play Store"}
             </a>
           </>
         ) : deviceType !== "desktop" ? (
