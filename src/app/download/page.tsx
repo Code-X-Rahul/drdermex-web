@@ -38,10 +38,6 @@ export default function Download() {
     }
   }, []);
 
-  const handleOpenInBrowser = () => {
-    const url = deviceType === "ios" ? APP_LINKS.ios : APP_LINKS.android;
-    window.open(url, "_blank");
-  };
 
   return (
     <>
@@ -54,14 +50,14 @@ export default function Download() {
               Tap the button below to open in your browser and download the app
             </p>
 
-            <button
-              onClick={handleOpenInBrowser}
-              className='px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-all'
+            <a
+              href={deviceType === "ios" ? APP_LINKS.ios : APP_LINKS.android}
+              className='inline-block px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-all'
             >
               {deviceType === "ios"
                 ? "Open in Safari"
                 : "Open in Chrome"}
-            </button>
+            </a>
           </>
         ) : deviceType !== "desktop" ? (
           <>
