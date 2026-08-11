@@ -50,68 +50,18 @@ export default function Download() {
         {isWebView && deviceType !== "desktop" ? (
           <>
             <h1 className='text-2xl font-bold mb-4'>Download DrDermX</h1>
-            <p className='text-lg mb-6 text-gray-600'>
-              Tap the button below to open in your browser, then download the app
+            <p className='text-lg mb-8 text-gray-600'>
+              Tap the button below to open in your browser and download the app
             </p>
 
             <button
               onClick={handleOpenInBrowser}
-              className='px-6 py-3 bg-primary text-white rounded-lg font-semibold mb-6 hover:bg-primary/90 transition-all'
+              className='px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-all'
             >
               {deviceType === "ios"
                 ? "Open in Safari"
                 : "Open in Chrome"}
             </button>
-
-            <p className='text-sm text-gray-600 mb-8'>
-              Or scan the QR code below with your device camera
-            </p>
-
-            <div className='mb-8 bg-white p-4 rounded-lg border border-gray-200'>
-              <Image
-                src={deviceType === "ios" ? "/qr-ios.svg" : "/qr-android.svg"}
-                alt='QR Code'
-                width={200}
-                height={200}
-              />
-            </div>
-
-            <div className='flex gap-4 mb-6'>
-              <a
-                href={APP_LINKS.ios}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex items-center'
-                style={{ height: "42px" }}
-              >
-                <Image
-                  src='/appstore.svg'
-                  alt='App Store'
-                  width={140}
-                  height={42}
-                  style={{ height: "42px", width: "auto" }}
-                />
-              </a>
-              <a
-                href={APP_LINKS.android}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex items-center'
-                style={{ height: "42px" }}
-              >
-                <Image
-                  src='/playstore.png'
-                  alt='Google Play'
-                  width={140}
-                  height={42}
-                  style={{ height: "42px", width: "auto" }}
-                />
-              </a>
-            </div>
-
-            <p className='text-xs text-gray-500'>
-              If you're having issues, try opening the link manually in your browser
-            </p>
           </>
         ) : deviceType !== "desktop" ? (
           <>
