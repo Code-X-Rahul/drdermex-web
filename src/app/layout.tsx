@@ -5,6 +5,9 @@ import Footer from "@/components/navigation/footer";
 import Header from "@/components/Header";
 import { Suspense } from "react";
 import { ScrollProvider } from "@/context/ScrollContext";
+import SiteChrome from "@/components/wrappers/SiteChrome";
+import QueryProvider from "@/providers/QueryProvider";
+import { AuthProvider } from "@/context/AuthContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,12 +28,21 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${inter.className} antialiased text-secondary`}>
-        <ScrollProvider>
-          <Header />
+        <QueryProvider>
+          <AuthProvider>
+            <ScrollProvider>
+              <SiteChrome>
+                <Header />
+              </SiteChrome>
 
-          <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
-          <Footer />
-        </ScrollProvider>
+              <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+
+              <SiteChrome>
+                <Footer />
+              </SiteChrome>
+            </ScrollProvider>
+          </AuthProvider>
+        </QueryProvider>
       </body>
     </html>
   );
