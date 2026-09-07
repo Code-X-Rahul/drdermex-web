@@ -25,7 +25,21 @@ export const ENDPOINTS = {
 
   // Diagnosis — note this one is v2
   UPSERT_IMAGE_DIAGNOSIS: `${V2}/diagnosis/upsertImageDiagnosis`,
+
+  // Payment — also v2
+  CAPTURE_PAYMENT: `${V2}/payment/capturePayment`,
+  VERIFY_PAYMENT: `${V2}/payment/verifyPayment`,
 } as const;
+
+/**
+ * Public checkout key, safe to ship client-side (the secret stays server-only).
+ * Same build-time-constant approach as API_BASE_URL — points at the same
+ * environment as the dev backend above, so it must move in lockstep with it.
+ */
+export const RAZORPAY_KEY_ID = "rzp_test_WzzvSDMupmC1Gv";
+
+export const RAZORPAY_CHECKOUT_SCRIPT_URL =
+  "https://checkout.razorpay.com/v1/checkout.js";
 
 /** The platform discriminator the backend expects. Note the capital F. */
 export const PLATFORM = "PATIENT_APP";
