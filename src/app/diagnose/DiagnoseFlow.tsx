@@ -16,6 +16,7 @@ import ExtentStep from "./steps/ExtentStep";
 import AreaStep from "./steps/AreaStep";
 import ConditionStep from "./steps/ConditionStep";
 import SummaryStep from "./steps/SummaryStep";
+import PaymentStep from "./steps/PaymentStep";
 import DoneStep from "./steps/DoneStep";
 
 const STEP_COMPONENTS: Record<FlowStep, () => React.JSX.Element | null> = {
@@ -27,6 +28,7 @@ const STEP_COMPONENTS: Record<FlowStep, () => React.JSX.Element | null> = {
   area: AreaStep,
   condition: ConditionStep,
   summary: SummaryStep,
+  payment: PaymentStep,
   done: DoneStep,
 };
 
@@ -52,6 +54,8 @@ const missingPrerequisite = (
       return draft.selectedBodyPartIds.length > 0 ? null : "area";
     case "summary":
       return hasPhotos ? null : "upload";
+    case "payment":
+      return draft.imageDiagnosisId !== null ? null : "upload";
     default:
       return null;
   }

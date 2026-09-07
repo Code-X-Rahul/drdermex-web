@@ -7,6 +7,7 @@ export const FLOW_STEPS = [
   "area",
   "condition",
   "summary",
+  "payment",
   "done",
 ] as const;
 
