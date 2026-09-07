@@ -24,9 +24,9 @@ const BENEFITS = [
 ];
 
 /**
- * Payment is not taken on web. The submitted diagnosis sits server-side at
- * status RESUME_SUBMISSION, which the mobile app lists and can resume with
- * every answer pre-filled — so this step is purely the handoff.
+ * Reached only after PaymentStep verifies payment (or the free trial covers
+ * it) — the diagnosis is now in process server-side. Full results still
+ * surface in the DrDermx app, so this step hands off there.
  */
 const DoneStep = () => {
   const { resetDraft } = useDiagnosisFlow();
@@ -35,9 +35,9 @@ const DoneStep = () => {
     <div className='mx-auto flex min-h-[100dvh] w-full max-w-md flex-col bg-white px-6 pb-8 pt-16'>
       <div className='flex flex-1 flex-col'>
         <div className='space-y-3 text-center'>
-          <h1 className='text-2xl font-bold text-secondary'>Your details are saved</h1>
+          <h1 className='text-2xl font-bold text-secondary'>You&apos;re all set</h1>
           <p className='text-sm text-muted-foreground'>
-            Continue in the DrDermx app to unlock your personalised diagnosis.
+            Continue in the DrDermx app to track your personalised diagnosis.
           </p>
         </div>
 
