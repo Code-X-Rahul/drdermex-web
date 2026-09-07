@@ -39,7 +39,7 @@ const SummaryStep = () => {
           // Keep the id so a resubmit updates the same row instead of
           // creating a duplicate draft.
           updateDraft({ imageDiagnosisId: data.data.id });
-          goToStep("done");
+          goToStep("payment");
         },
       }
     );
