@@ -14,6 +14,7 @@ import {
 import StepShell from "@/components/diagnose/StepShell";
 import ErrorBanner from "@/components/diagnose/ErrorBanner";
 import { useAuth } from "@/context/AuthContext";
+import { useDiagnosisFlow } from "@/context/DiagnosisFlowContext";
 import { useGenerateOtp } from "@/hooks/useAuth";
 import { useFlowNavigation } from "@/hooks/useFlowNavigation";
 import { clearSignupState, setSignupState } from "@/services/signupStorage";
@@ -28,6 +29,7 @@ const COUNTRY_CODES = [
 const LoginStep = () => {
   const { goToStep } = useFlowNavigation();
   const { isAuthenticated, user, signOut } = useAuth();
+  const { resetDraft } = useDiagnosisFlow();
   const generateOtp = useGenerateOtp();
 
   const [countryCode, setCountryCode] = useState("91");
@@ -83,6 +85,9 @@ const LoginStep = () => {
                 onClick={() => {
                   signOut();
                   clearSignupState();
+                  // Otherwise the old account's photos/answers — and its
+                  // imageDiagnosisId — leak into whatever this new number submits.
+                  resetDraft();
                 }}
               >
                 Use a different number
