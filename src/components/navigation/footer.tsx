@@ -1,115 +1,95 @@
 import Image from "next/image";
-import MainWrapper from "../wrappers/MainWrapper";
-import { Send } from "lucide-react";
-
-import { FiFacebook, FiInstagram, FiTwitter, FiLinkedin } from "react-icons/fi";
-
 import Link from "next/link";
-import { FaWhatsapp, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaXTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
+import { APP_STORE_URL, PLAY_STORE_URL, DOCTOR_PLAY_STORE_URL, SOCIALS } from "@/constants/links";
 
-const quickLinks = [
-  { name: "Home", href: "/" },
-  { name: "Privacy Policy", href: "/privacy-policy" },
-  { name: "Terms and Conditions", href: "/terms-and-conditions" },
-  { name: "Disclaimer Policy", href: "/disclaimer-policy" },
+const COLUMNS = [
+  {
+    title: "DrDermx",
+    links: [
+      { label: "Home", href: "/" },
+      { label: "Start my diagnosis", href: "/diagnose" },
+      { label: "Download the app", href: "/download" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms & Conditions", href: "/terms-and-conditions" },
+      { label: "Disclaimer Policy", href: "/disclaimer-policy" },
+      { label: "Delete my account", href: "/delete-account" },
+    ],
+  },
 ];
 
-const socialMediaLinks = [
-  {
-    id: 1,
-    Icon: FiInstagram,
-    link: "https://www.instagram.com/drdermx_official",
-  },
-  {
-    id: 2,
-    Icon: FiFacebook,
-    link: "https://www.facebook.com/people/DrDermx/61573088566777/",
-  },
-  {
-    id: 3,
-    Icon: FiTwitter,
-    link: "https://x.com/DrDermXofficial",
-  },
-  {
-    id: 4,
-    Icon: FiLinkedin,
-    link: "https://www.linkedin.com/company/drdermx/",
-  },
-  {
-    id: 5,
-    Icon: FaWhatsapp,
-    link: "whatsapp://channel/0029Vb3mK8LIXnljxJ2ERc0C",
-  },
-  {
-    id: 6,
-    Icon: FaYoutube,
-    link: "https://www.youtube.com/@DrDermx/",
-  },
-];
+const SOCIAL_ICONS = { instagram: FaInstagram, facebook: FaFacebookF, x: FaXTwitter, linkedin: FaLinkedinIn, youtube: FaYoutube };
 
 const Footer = () => {
   return (
-    <footer className='bg-secondary '>
-      <MainWrapper className='mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-0 lg:py-32'>
-        <div className='xl:grid xl:grid-cols-3 xl:gap-8'>
-          <div className='flex flex-col gap-2'>
-            <Image src={"/footerLogo.svg"} alt='DrDermex logo' width={150} height={34} />
-            <p className='text-white'>
-              DrDermx is one stop solution for all skin ailments/ diseases, a dermatology platform
-              providing fast, affordable, and expert-led skin diagnoses.
-            </p>
-            <div className='flex items-center divide-x-2 divide-white/10'>
-              {socialMediaLinks.map((link) => (
-                <Link key={link.id} href={link.link} target='_blank'>
-                  <div className='p-2'>
-                    <link.Icon className='text-white hover:text-primary text-2xl cursor-pointer' />
-                  </div>
-                </Link>
-              ))}
+    <footer className='bg-ink text-white'>
+      <div className='mx-auto max-w-[1400px] px-6 pb-10 pt-16 sm:px-8 lg:px-10 lg:pt-20'>
+        <div className='grid gap-12 lg:grid-cols-[1fr,1fr,1.6fr]'>
+          {COLUMNS.map((col) => (
+            <div key={col.title}>
+              <p className='mb-5 text-[17px] font-bold'>{col.title}</p>
+              <ul className='space-y-3.5'>
+                {col.links.map((l) => (
+                  <li key={l.label}>
+                    <Link href={l.href} className='text-[15px] text-white/80 hover:text-coral'>
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          ))}
 
-          <div className='mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 xl:col-span-2 xl:mt-0'>
-            <div className='md:grid md:grid-cols-1 md:gap-8'>
-              <div>
-                <h3 className='uppercase text-2xl leading-[18px] text-white font-semibold'>
-                  quick links
-                </h3>
-                <ul role='list' className='mt-6 space-y-4'>
-                  {quickLinks.map((item) => (
-                    <li key={item.name}>
-                      <Link href={item.href} className='text-white font-medium'>
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <div className='lg:border-l lg:border-white/10 lg:pl-12'>
+            <p className='text-xs font-extrabold uppercase tracking-[0.18em] text-white/60'>
+              Experience the DrDermx mobile app
+            </p>
+            <div className='mt-4 flex flex-wrap gap-3'>
+              <a href={PLAY_STORE_URL} target='_blank' rel='noreferrer'>
+                <Image src='/playstore.png' alt='Google Play' width={130} height={40} className='h-10 w-auto' />
+              </a>
+              <a href={APP_STORE_URL} target='_blank' rel='noreferrer'>
+                <Image src='/appstore.svg' alt='App Store' width={130} height={40} className='h-10 w-auto' />
+              </a>
             </div>
-            <div className='md:grid md:grid-cols-1 md:gap-8'>
-              <div className='flex flex-col gap-8'>
-                <div>
-                  <p className='font-semibold text-2xl leading-9 uppercase text-white'>
-                    newsletter
-                  </p>
-                  <p className='text-white'>
-                    Subscribe our newsletter to get our latest update & news
-                  </p>
-                </div>
-                <div className='relative max-w-fit'>
-                  <input
-                    className='rounded-full h-[50px] w-[369px] px-5 placeholder:text-base placeholder:text-[#7D7D7D] focus-within:outline-primary'
-                    placeholder='Your email address'
-                  />
-                  <button className='bg-primary absolute size-[46px] text-white rounded-full p-2  right-1 top-1/2 -translate-y-1/2'>
-                    <Send />
-                  </button>
-                </div>
-              </div>
-            </div>
+            <p className='mt-4 text-sm text-white/60'>
+              Are you a doctor?{" "}
+              <a href={DOCTOR_PLAY_STORE_URL} target='_blank' rel='noreferrer' className='font-bold text-white underline underline-offset-4'>
+                Get DrDermx for Professionals
+              </a>
+            </p>
+            <div className='my-8 h-px bg-white/10' />
+            <p className='max-w-md text-sm leading-6 text-white/70'>
+              DrDermx is a dermatology platform providing fast, affordable, and expert-led skin
+              diagnoses — combining image-based analysis with Medical Council registered
+              dermatologists.
+            </p>
+            <p className='mt-4 text-sm text-white/50'>Registered Copyright {new Date().getFullYear()}</p>
           </div>
         </div>
-      </MainWrapper>
+
+        <div className='mt-16 flex flex-col gap-6 border-t border-white/10 pt-8 sm:flex-row sm:items-end sm:justify-between'>
+          <div>
+            <p className='mb-3 text-sm text-white/70'>Catch us on :</p>
+            <div className='flex gap-4'>
+              {SOCIALS.map(({ id, href }) => {
+                const Icon = SOCIAL_ICONS[id];
+                return (
+                  <a key={id} href={href} target='_blank' rel='noreferrer' aria-label={id} className='text-white/80 hover:text-coral'>
+                    <Icon className='size-6' />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+          <Image src='/footerLogo.svg' alt='DrDermx' width={170} height={28} />
+        </div>
+      </div>
     </footer>
   );
 };
