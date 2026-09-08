@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/navigation/footer";
 import Header from "@/components/Header";
@@ -9,10 +9,11 @@ import SiteChrome from "@/components/wrappers/SiteChrome";
 import QueryProvider from "@/providers/QueryProvider";
 import { AuthProvider } from "@/context/AuthContext";
 
-const inter = Inter({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -26,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={`${inter.className} antialiased text-secondary`}>
+    <html lang='en' className={jakarta.variable}>
+      <body className='font-sans antialiased text-ink'>
         <QueryProvider>
           <AuthProvider>
             <ScrollProvider>
