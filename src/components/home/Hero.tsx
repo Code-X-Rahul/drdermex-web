@@ -55,7 +55,7 @@ const Hero = () => {
           <div className='hidden h-[215px] lg:block' />
         </div>
 
-        <div className='no-scrollbar mt-3 flex gap-3 overflow-x-auto pb-7 lg:absolute lg:bottom-0 lg:left-0 lg:mt-0 lg:gap-4 lg:overflow-visible lg:rounded-tr-[40px] lg:bg-[#ebe8e1] lg:pb-0 lg:pr-6 lg:pt-5'>
+        <div className='no-scrollbar mt-3 flex gap-3 overflow-x-auto pb-7 lg:absolute lg:bottom-0 lg:left-0 lg:mt-0 lg:gap-4 lg:overflow-visible lg:rounded-tr-[40px] lg:bg-[#ebe8e1] lg:pb-0 lg:pl-6 lg:pr-6 lg:pt-5'>
           {STATS.map(({ value, label, Icon, color }) => (
             <div key={label} className='stat-card relative flex min-w-[124px] flex-1 flex-col items-center rounded-[22px] px-3 pb-11 pt-6 text-center shadow-[0_6px_20px_rgba(0,0,0,0.06)] lg:w-[132px] lg:flex-none'>
               <p className='text-[26px] font-extrabold leading-none text-ink'>{value}</p>
