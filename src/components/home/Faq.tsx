@@ -25,6 +25,7 @@ const Faq = () => {
     <section className='mx-auto max-w-[1400px] px-5 py-24 sm:px-8 sm:py-32 lg:px-10'>
       <div className='grid gap-10 lg:grid-cols-[0.8fr,1.2fr] lg:gap-16'>
         <SectionHeading
+          className='self-start'
           eyebrow='FAQ'
           title='Questions, answered'
           description='We’d be happy to help with whatever else you want to know — just reach us on WhatsApp.'
