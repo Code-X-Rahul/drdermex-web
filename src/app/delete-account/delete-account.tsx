@@ -66,7 +66,7 @@ function DeleteAccountForm() {
   };
 
   return (
-    <div className='md:w-3/4 px-8 space-y-8 mx-auto'>
+    <div className='space-y-8'>
       {/* Reason of Leaving */}
       <form className='space-y-8'>
         <div className='space-y-2'>
@@ -133,7 +133,7 @@ function DeleteAccountForm() {
       <div className='flex justify-center gap-4'>
         <Button
           onClick={handleSubmit}
-          className='basis-full'
+          className='h-12 basis-full rounded-xl bg-rose text-[15px] font-bold uppercase tracking-wide hover:bg-rose/90'
           variant='destructive'
           disabled={!formData.reason || formData.otp.length < 6}
         >
