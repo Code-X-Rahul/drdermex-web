@@ -1,4 +1,5 @@
 import Hero from "@/components/home/Hero";
+import SuccessStories from "@/components/home/SuccessStories";
 import RootCauses from "@/components/home/RootCauses";
 import AccuracyBand from "@/components/home/AccuracyBand";
 import CareCards from "@/components/home/CareCards";
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <SuccessStories />
       <RootCauses />
       <AccuracyBand />
       <CareCards />
