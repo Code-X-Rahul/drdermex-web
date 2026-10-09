@@ -2,6 +2,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import PageCard from "@/components/wrappers/PageCard";
+
+const HEADING = "text-[32px] font-bold leading-[1.12] tracking-[-0.5px] text-ink sm:text-[40px]";
 
 const APP_LINKS = {
   ios: "https://apps.apple.com/in/app/drdermx/id6739869233",
@@ -35,11 +38,11 @@ export default function Download() {
   }, []);
 
   return (
-    <div className='flex-1 flex flex-col items-center justify-center p-8 text-center'>
+    <PageCard className='max-w-[640px] text-center'>
       {deviceType === "desktop" ? (
         <>
-          <h1 className='text-2xl font-bold mb-4'>Download DrDermX</h1>
-          <p className='mb-8'>
+          <h1 className={HEADING}>Download DrDermX</h1>
+          <p className='mx-auto mb-8 mt-4 max-w-md text-[17px] leading-7 text-ink/70'>
             Download our app on your mobile device for the best experience.
           </p>
           <div className='flex gap-6 items-center justify-center'>
@@ -74,15 +77,15 @@ export default function Download() {
               />
             </a>
           </div>
-          <p className='mt-8'>
-            <Link href='/' className='text-primary underline'>
+          <p className='mt-10'>
+            <Link href='/' className='text-[15px] font-bold text-rose underline-offset-4 hover:underline'>
               Go back to home
             </Link>
           </p>
         </>
       ) : isWebView && deviceType === "ios" ? (
         <>
-          <h1 className='text-2xl font-bold mb-8'>Download DrDermX</h1>
+          <h1 className={`${HEADING} mb-8`}>Download DrDermX</h1>
           <a
             href={APP_LINKS.iosWebView}
             className='flex items-center'
@@ -99,20 +102,20 @@ export default function Download() {
         </>
       ) : (
         <>
-          <h1 className='text-2xl font-bold mb-4'>
+          <h1 className={`${HEADING} mb-4`}>
             {deviceType === "ios"
               ? "Redirecting to App Store..."
               : "Redirecting to Google Play Store..."}
           </h1>
-          <p>
+          <p className='text-ink/70'>
             If nothing happens,{" "}
-            <Link href='/' className='text-primary underline'>
+            <Link href='/' className='font-bold text-rose underline'>
               click here
             </Link>{" "}
             to go back.
           </p>
         </>
       )}
-    </div>
+    </PageCard>
   );
 }
