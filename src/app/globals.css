@@ -56,6 +56,31 @@
   background: radial-gradient(120% 110% at 28% 0%, #4c525c 0%, #2f343c 48%, #22262d 100%);
 }
 
+/* Page-level backdrop behind the transparent home header and hero card (Traya-style). */
+.hero-backdrop {
+  /* Flat #ebe8e1 band behind the stats tray (same colour) so the tray reads as a notch in the card. */
+  background: linear-gradient(
+    180deg,
+    #717883 0%,
+    #ebe8e1 calc(100% - 300px),
+    #ebe8e1 calc(100% - 70px),
+    #ffffff 100%
+  );
+}
+
+/* Rounds the dark card's bottom-left corner where the stats tray starts. */
+@media (min-width: 1024px) {
+  .hero-tray::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    width: 24px;
+    height: 24px;
+    background: radial-gradient(circle at 100% 0, transparent 24px, #ebe8e1 24.5px);
+  }
+}
+
 .navy-gradient {
   background: linear-gradient(135deg, #1b2740 0%, #24365c 55%, #2f4a7c 100%);
 }

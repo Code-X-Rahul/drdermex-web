@@ -34,6 +34,7 @@ const SOCIAL_ICONS = { instagram: FaInstagram, facebook: FaFacebookF, x: FaXTwit
 const Header = () => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
@@ -44,7 +45,7 @@ const Header = () => {
   }, [open]);
 
   return (
-    <div className='sticky top-0 z-50'>
+    <div className={isHome ? "absolute inset-x-0 top-0 z-50" : "sticky top-0 z-50"}>
       <div className='hidden h-11 items-center justify-end gap-4 bg-white px-6 sm:flex lg:px-10'>
         <p className='text-[15px] text-ink'>Instant, dermatologist-verified results on the app</p>
         <Link
@@ -55,7 +56,7 @@ const Header = () => {
         </Link>
       </div>
 
-      <header className='bg-ink/95 backdrop-blur'>
+      <header className={isHome ? "" : "bg-ink/95 backdrop-blur"}>
         <nav className='flex h-[74px] items-center justify-between px-5 sm:px-8 lg:px-10'>
           <Link href='/' className='shrink-0'>
             <Image src='/footerLogo.svg' alt='DrDermx' width={150} height={25} priority />

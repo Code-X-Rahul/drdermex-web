@@ -10,7 +10,7 @@ const STATS = [
 
 const Hero = () => {
   return (
-    <section className='px-4 pt-4 sm:px-6 lg:px-8'>
+    <section className='hero-backdrop px-4 pt-[86px] sm:px-6 sm:pt-[130px] lg:px-8'>
       <div className='relative mx-auto max-w-[1400px]'>
         <div className='hero-gradient relative overflow-hidden rounded-[24px] lg:min-h-[600px]'>
           <div className='relative z-10 max-w-[600px] px-6 pb-8 pt-12 sm:px-10 sm:pt-16 lg:px-12 lg:pb-0 lg:pt-[72px]'>
@@ -55,7 +55,7 @@ const Hero = () => {
           <div className='hidden h-[215px] lg:block' />
         </div>
 
-        <div className='no-scrollbar mt-3 flex gap-3 overflow-x-auto pb-7 lg:absolute lg:bottom-0 lg:left-0 lg:mt-0 lg:gap-4 lg:overflow-visible lg:rounded-tr-[40px] lg:bg-[#ebe8e1] lg:pb-0 lg:pl-6 lg:pr-6 lg:pt-5'>
+        <div className='hero-tray no-scrollbar mt-3 flex gap-3 overflow-x-auto pb-7 lg:absolute lg:bottom-0 lg:left-0 lg:mt-0 lg:gap-4 lg:overflow-visible lg:rounded-tr-[40px] lg:bg-[#ebe8e1] lg:pb-0 lg:pl-6 lg:pr-6 lg:pt-5'>
           {STATS.map(({ value, label, Icon, color }) => (
             <div key={label} className='stat-card relative flex min-w-[124px] flex-1 flex-col items-center rounded-[22px] px-3 pb-11 pt-6 text-center shadow-[0_6px_20px_rgba(0,0,0,0.06)] lg:w-[132px] lg:flex-none'>
               <p className='text-[26px] font-extrabold leading-none text-ink'>{value}</p>
@@ -67,7 +67,7 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className='h-8 lg:h-0' />
+      <div className='h-8 lg:h-16' />
     </section>
   );
 };
