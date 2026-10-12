@@ -9,7 +9,6 @@ const TABS = {
     label: "Patients",
     steps: [
       { Icon: Camera, title: "Upload a photo", text: "Of the affected area, right from your phone." },
-      { Icon: Cpu, title: "AI analysis", text: "A preliminary diagnosis in seconds." },
       { Icon: Stethoscope, title: "Dermatologist review", text: "An MCI-registered doctor verifies it." },
       { Icon: ClipboardCheck, title: "Treatment plan", text: "Prescription, routine, diet and yoga." },
       { Icon: TrendingUp, title: "Track evolution", text: "See your skin improve over time." },
@@ -56,7 +55,12 @@ const WhatYouGet = () => {
           What you get with DrDermx
         </h2>
 
-        <div className='no-scrollbar mt-10 flex gap-6 overflow-x-auto pb-2 lg:grid lg:grid-cols-5 lg:gap-4'>
+        <div
+          className={cn(
+            "no-scrollbar mt-10 flex gap-6 overflow-x-auto pb-2 lg:grid lg:gap-4",
+            steps.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-5"
+          )}
+        >
           {steps.map(({ Icon, title, text }, i) => (
             <div key={title} className='relative min-w-[200px] lg:min-w-0'>
               <div className='flex size-16 items-center justify-center rounded-2xl bg-white text-rose shadow-sm'>
