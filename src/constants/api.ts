@@ -4,7 +4,7 @@
  *
  * No trailing slash: every endpoint below supplies its own leading slash.
  */
-export const API_BASE_URL = "https://dev.backend.drdermx.com";
+export const API_BASE_URL = "https://prod.backend.drdermx.com";
 
 const V1 = "/api/v1";
 const V2 = "/api/v2";
