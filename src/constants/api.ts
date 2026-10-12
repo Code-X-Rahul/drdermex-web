@@ -33,10 +33,11 @@ export const ENDPOINTS = {
 
 /**
  * Public checkout key, safe to ship client-side (the secret stays server-only).
- * Same build-time-constant approach as API_BASE_URL — points at the same
- * environment as the dev backend above, so it must move in lockstep with it.
+ * Same build-time-constant approach as API_BASE_URL — must be the live key of
+ * the Razorpay account the prod backend creates orders with, so it has to move
+ * in lockstep with API_BASE_URL.
  */
-export const RAZORPAY_KEY_ID = "rzp_test_WzzvSDMupmC1Gv";
+export const RAZORPAY_KEY_ID = "rzp_live_5c64itJCVDSXDj";
 
 export const RAZORPAY_CHECKOUT_SCRIPT_URL =
   "https://checkout.razorpay.com/v1/checkout.js";
